@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Manual Client Entry</title>
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<div class="sidebar">
+
+<h2>Risk Manager</h2>
+
+<ul>
+<li>
+<a href="landing.html">Home</a>
+</li>    
+<li><a href="dashboard.html">Dashboard</a></li>
+<li><a href="upload.html">Upload Data</a></li>
+<li><a href="manual.html">Manual Entry</a></li>
+<li><a href="clients.html">Clients</a></li>
+<li><a href="forecast.html">Forecast</a></li>
+</ul>
+
+</div>
+
+<div class="content">
+
+<div class="card">
+
+<h2>Manual Client Entry</h2>
+
+<p class="subtitle">
+Enter client information manually if you don't have spreadsheets.
+</p>
+
+<div class="client-count">
+
+<label>Number of Clients</label>
+
+<input type="number" id="clientCount" value="5" min="1" max="50">
+
+<button onclick="generateForms()" class="generate-btn">
+Generate Form
+</button>
+
+</div>
+
+<div class="progress-container">
+
+<div class="progress-text">
+Client <span id="currentStep">1</span> of <span id="totalSteps">5</span>
+</div>
+
+<div class="progress-bar">
+<div id="progressFill"></div>
+</div>
+
+</div>
+
+<form id="clientForm">
+<div id="formContainer"></div>
+</form>
+
+</div>
+
+</div>
+
+<script src="manual.js"></script>
+
+</body>
+</html>

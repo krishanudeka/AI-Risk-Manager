@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Forecast</title>
+
+<link rel="stylesheet" href="style.css">
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+
+<body>
+
+<!-- SIDEBAR -->
+
+<div class="sidebar">
+
+<h2>Risk Manager</h2>
+
+<ul>
+<li><a href="landing.html">Home</a></li>
+<li><a href="dashboard.html">Dashboard</a></li>
+<li><a href="upload.html">Upload Data</a></li>
+<li><a href="manual.html">Manual Entry</a></li>
+<li><a href="clients.html">Clients</a></li>
+<li><a href="forecast.html" class="active">Forecast</a></li>
+</ul>
+
+</div>
+
+
+<!-- MAIN CONTENT -->
+
+<div class="content">
+
+<h1>Forecast Analytics</h1>
+
+
+<!-- SUMMARY CARDS -->
+
+<div class="cards">
+
+<div class="card">
+<h3>Next Month Revenue</h3>
+<p id="nextMonth"></p>
+</div>
+
+<div class="card">
+<h3>Next Quarter Revenue</h3>
+<p id="nextQuarter"></p>
+</div>
+
+<div class="card">
+<h3>Revenue At Risk</h3>
+<p id="revenueRisk"></p>
+</div>
+
+<div class="card">
+<h3>Forecast Confidence</h3>
+<p id="confidence"></p>
+</div>
+
+</div>
+
+
+
+<!-- ANALYTICS GRID -->
+
+<div class="charts">
+
+<!-- Revenue Forecast -->
+
+<div class="card">
+
+<h3>Revenue Forecast</h3>
+
+<canvas id="forecastChart"></canvas>
+
+</div>
+
+
+<!-- Churn Forecast -->
+
+<div class="card">
+
+<h3>Monthly Churn Forecast</h3>
+
+<table id="churnTable">
+
+<thead>
+<tr>
+<th>Month</th>
+<th>Expected Churn</th>
+<th>Revenue Loss</th>
+</tr>
+</thead>
+
+<tbody></tbody>
+
+</table>
+
+</div>
+
+
+<!-- High Risk Clients -->
+
+<div class="card">
+
+<h3>High Risk Clients</h3>
+
+<div class="table-container">
+
+<table id="riskClients">
+
+<thead>
+<tr>
+<th>Client</th>
+<th>Churn %</th>
+<th>CLV</th>
+<th>Revenue Risk</th>
+</tr>
+</thead>
+
+<tbody></tbody>
+
+</table>
+
+</div>
+
+</div>
+
+
+<!-- Scenario Simulator -->
+
+<div class="card simulator-card">
+
+<h3>Scenario Simulator</h3>
+
+<p class="sim-description">
+Estimate how an increase in client churn could impact revenue.
+This simulation uses the current high-risk clients detected by the system.
+</p>
+
+<div class="sim-control">
+
+<div class="sim-label">
+Churn Increase: <span id="churnPercent">0%</span>
+</div>
+
+<input type="range" min="0" max="50" value="0" id="churnSlider">
+
+</div>
+
+<div class="sim-result">
+
+<div class="sim-result-title">
+Estimated Additional Revenue Loss
+</div>
+
+<div class="sim-result-value" id="simImpact">
+$0
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+
+</div>
+
+
+<script src="forecast.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Upload Client Data</title>
+
+<script src="https://cdn.tailwindcss.com"></script>
+
+</head>
+
+
+<body class="bg-gray-100">
+
+<div class="flex">
+
+<!-- SIDEBAR -->
+
+<div class="w-64 min-h-screen bg-gray-900 text-white p-6 fixed">
+
+<h2 class="text-xl font-bold mb-10">Risk Manager</h2>
+
+<ul class="space-y-4">
+
+<li>
+<a href="landing.html">Home</a>
+</li>    
+
+<li>
+<a href="dashboard.html" class="hover:text-gray-300">Dashboard</a>
+</li>
+
+<li>
+<a href="upload.html" class="hover:text-gray-300">Upload Data</a>
+</li>
+
+<li>
+<a href="manual.html" class="hover:text-gray-300">Manual Entry</a>
+</li>
+
+<li>
+<a href="clients.html" class="hover:text-gray-300">Clients</a>
+</li>
+
+<li>
+<a href="forecast.html" class="hover:text-gray-300">Forecast</a>
+</li>
+
+</ul>
+
+</div>
+
+
+<!-- MAIN CONTENT -->
+
+<div class="flex-1 ml-64 flex items-center justify-center h-screen">
+
+<div class="bg-white p-10 rounded-xl shadow w-[600px]">
+
+<h1 class="text-3xl font-bold mb-6 text-center">
+
+Upload Client Data
+
+</h1>
+
+<p class="text-gray-600 text-center mb-8">
+
+Upload one or multiple spreadsheets containing client data.
+
+</p>
+
+
+<!-- FILE INPUT -->
+
+<input
+type="file"
+id="fileUpload"
+multiple
+class="border p-3 w-full mb-6"
+/>
+
+
+<!-- FILE LIST -->
+
+<div id="fileList" class="mb-6 text-sm text-gray-600"></div>
+
+
+<!-- BUTTON -->
+
+<button
+onclick="processFiles()"
+class="w-full bg-blue-600 text-white py-3 rounded-lg text-lg hover:bg-blue-700"
+>
+
+Calculate Risk & Open Dashboard
+
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+
+
+<script>
+
+let selectedFiles = []
+
+const fileInput = document.getElementById("fileUpload")
+const fileList = document.getElementById("fileList")
+
+fileInput.addEventListener("change", function(){
+
+for(let file of this.files){
+
+selectedFiles.push(file)
+
+}
+
+renderFileList()
+
+})
+
+
+function renderFileList(){
+
+fileList.innerHTML=""
+
+selectedFiles.forEach(file=>{
+
+const p=document.createElement("p")
+p.innerText="✔ "+file.name
+p.className="text-green-600"
+
+fileList.appendChild(p)
+
+})
+
+}
+
+
+async function processFiles(){
+
+if(selectedFiles.length===0){
+
+alert("Please upload at least one file")
+return
+
+}
+
+const formData=new FormData()
+
+selectedFiles.forEach(file=>{
+
+formData.append("files",file)
+
+})
+
+await fetch("http://127.0.0.1:8000/upload",{
+
+method:"POST",
+body:formData
+
+})
+
+window.location.href="dashboard.html"
+
+}
+
+</script>
+
+
+</body>
+</html>
