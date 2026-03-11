@@ -52,31 +52,7 @@ F --> G[Interactive Dashboard]
 
 ---
 
-# 🖥️ Screenshots
 
-### Dashboard
-
-<img src="screenshots/dashboard.png" width="800">
-
-### Client Risk Analysis
-
-<img src="screenshots/clients.png" width="800">
-
-### Financial Forecast
-
-<img src="screenshots/forecast.png" width="800">
-
-*(Add screenshots to a folder named `screenshots` in the repo)*
-
----
-
-# 🎬 Demo
-
-<img src="demo/demo.gif" width="800">
-
-*(Optional: Add a demo GIF showing dashboard interaction)*
-
----
 
 # 🛠️ Tech Stack
 
