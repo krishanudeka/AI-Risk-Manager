@@ -1,146 +1,163 @@
-# AI Risk Manager
+# 🚀 AI Risk Manager
 
-![Python](https://img.shields.io/badge/Python-3.10-blue)
-![FastAPI](https://img.shields.io/badge/FastAPI-Backend-green)
-![Machine Learning](https://img.shields.io/badge/Machine-Learning-orange)
+**AI Risk Manager** is a full-stack financial intelligence platform that enables businesses to **ingest, process, analyze, and forecast financial data** using a combination of data pipelines, machine learning, and analytical dashboards.
 
-AI Risk Manager is an intelligent financial analytics platform designed to help businesses identify financial risks, analyze operational data, and forecast future financial trends using machine learning.
-
-The system processes financial datasets such as clients, invoices, and transactions, then automatically generates insights including client risk scores, financial forecasts, and analytical dashboards.
+It is designed as a **modular, production-oriented system** that transforms raw financial datasets into actionable insights such as **client risk scoring, anomaly detection, and revenue forecasting**.
 
 ---
 
-# 🚀 Features
+## ✨ Core Capabilities
 
-* 📊 Financial Data Analysis
-* ⚠️ Automated Risk Detection
-* 📈 Revenue Forecasting
-* 🧠 Machine Learning–based Risk Prediction
-* 📂 CSV Dataset Upload & Processing
-* 📉 Interactive Financial Dashboards
-* 👥 Client Behavior Analysis
+* 📥 **Data Ingestion Pipeline**
+
+  * Supports structured financial datasets (clients, invoices, transactions)
+  * Handles CSV uploads and manual entries
+  * Modular ingestion layer (`ingestion.py`, `manual_entry.py`)
+
+* 🧹 **Data Validation & Transformation**
+
+  * Schema validation and cleaning (`validator.py`)
+  * Feature mapping and normalization (`mapper.py`)
+  * Dataset construction pipeline (`dataset_builder.py`, `data_pipelining.py`)
+
+* 🧠 **Machine Learning Risk Engine**
+
+  * Predictive risk scoring for clients
+  * Behavioral analysis based on transaction patterns
+  * Model training & inference pipeline (`train_model.py`, `models.py`)
+
+* 📈 **Forecasting Engine**
+
+  * Time-based financial forecasting (`forecast.py`)
+  * Revenue trend prediction and future projections
+
+* ⚠️ **Business Risk Analysis**
+
+  * Rule-based + ML hybrid risk evaluation (`business_risk.py`)
+  * Identification of high-risk clients and financial anomalies
+
+* 📊 **Visualization Layer**
+
+  * Interactive dashboards (Chart.js)
+  * Client-level and global financial insights (`visualizer.py`)
+
+* 🌐 **API Layer**
+
+  * FastAPI-powered REST backend (`api.py`, `main.py`)
+  * Clean separation between data processing and presentation
 
 ---
 
-# 🧠 Machine Learning Model
+## 🧠 System Design Philosophy
 
-The system uses machine learning to analyze financial behavior and detect potential business risks.
-
-### Capabilities
-
-* Predict high-risk clients
-* Detect abnormal financial patterns
-* Analyze payment behavior
-* Forecast future financial metrics
-
-The trained model is stored locally and used for prediction during runtime.
-
----
-
-# 🏗️ System Architecture
+AI Risk Manager is built with a **pipeline-first architecture**, where each stage is modular and independently extensible:
 
 ```mermaid
 flowchart LR
-
-A[User Uploads Financial Data] --> B[FastAPI Backend]
-B --> C[Data Validation & Processing]
+A[Raw Financial Data] --> B[Ingestion Layer]
+B --> C[Validation & Cleaning]
 C --> D[Feature Engineering]
-D --> E[Machine Learning Model]
-E --> F[Risk Prediction & Forecasting]
-F --> G[Interactive Dashboard]
+D --> E[Dataset Builder]
+E --> F[ML Model]
+F --> G[Risk Scoring & Forecasting]
+G --> H[Visualization & API Layer]
 ```
+
+### Key Design Principles
+
+* **Separation of Concerns** — ingestion, validation, modeling, and visualization are decoupled
+* **Pipeline Modularity** — each stage can be independently improved or replaced
+* **Extensibility** — supports new data sources and models
+* **Production-Oriented Design** — not a notebook-based ML project
 
 ---
 
-
-
-# 🛠️ Tech Stack
-
-### Frontend
-
-* HTML
-* CSS
-* JavaScript
+## 🧩 Tech Stack
 
 ### Backend
 
-* FastAPI
-* Python
+* FastAPI (API layer)
+* Python (core logic)
+* Pandas / NumPy (data processing)
 
 ### Machine Learning
 
-* Scikit-learn
-* Pandas
-* NumPy
+* Scikit-learn (model training & inference)
 
-### Visualization
+### Frontend
 
-* Chart.js
+* HTML / CSS / JavaScript
+* Chart.js (visualization)
 
 ---
 
-# 📂 Project Structure
+## 📂 Project Structure
 
-```
-AI-Risk-Manager
+```id="projstruct"
+AI-Risk-Manager/
 │
-├── core
-│   ├── api.py
-│   ├── business_risk.py
-│   ├── forecast.py
-│   ├── ingestion.py
-│   ├── validator.py
-│   └── visualizer.py
+├── core/
+│   ├── ingestion.py          # Data ingestion (CSV, manual)
+│   ├── validator.py          # Data validation
+│   ├── mapper.py             # Feature mapping
+│   ├── data_pipelining.py    # End-to-end pipeline orchestration
+│   ├── dataset_builder.py    # Dataset construction
+│   ├── business_risk.py      # Risk scoring logic
+│   ├── forecast.py           # Forecasting engine
+│   ├── models.py             # ML models
+│   ├── visualizer.py         # Data visualization logic
+│   └── api.py                # API endpoints
 │
-├── frontend
+├── frontend/
 │   ├── dashboard.html
 │   ├── forecast.html
 │   ├── clients.html
 │   ├── upload.html
-│   ├── script.js
+│   ├── manual.html
+│   ├── *.js
 │   └── style.css
 │
-├── data
+├── data/
 │   ├── clients.csv
 │   ├── invoices.csv
 │   └── transactions.csv
 │
-├── models_saved
+├── models_saved/
 │   └── churn_model.pkl
 │
-├── train_model.py
-├── main.py
+├── train_model.py            # Model training pipeline
+├── main.py                  # FastAPI entrypoint
 └── README.md
 ```
 
 ---
 
-# ⚙️ Installation
+## ⚙️ Setup & Installation
 
-### Clone the repository
+### 1. Clone Repository
 
-```
+```bash
 git clone https://github.com/krishanudeka/AI-Risk-Manager.git
 cd AI-Risk-Manager
 ```
 
 ---
 
-### Install dependencies
+### 2. Install Dependencies
 
-```
+```bash
 pip install -r requirements.txt
 ```
 
 ---
 
-### Run the backend server
+### 3. Run Backend
 
-```
+```bash
 uvicorn main:app --reload
 ```
 
-Server will run at:
+Server runs at:
 
 ```
 http://127.0.0.1:8000
@@ -148,36 +165,60 @@ http://127.0.0.1:8000
 
 ---
 
-# 📊 How the System Works
+## 🧪 End-to-End Workflow
 
-1. User uploads financial CSV datasets.
-2. Backend validates and processes the data.
-3. Feature engineering extracts relevant financial indicators.
-4. Machine learning model predicts risk scores.
-5. Results are visualized through dashboards.
+1. Upload financial datasets (clients, invoices, transactions)
+2. Data is validated and cleaned
+3. Features are engineered and mapped
+4. Dataset is constructed for modeling
+5. ML model predicts risk scores
+6. Forecasting module predicts future trends
+7. Results are visualized in dashboards
 
 ---
 
-# 🔮 Future Improvements
+## 📊 Example Insights Generated
 
-* Real-time financial monitoring
+* High-risk clients based on payment behavior
+* Revenue trends and future projections
+* Detection of abnormal financial activity
+* Client segmentation based on risk
+
+---
+
+## 🧠 What Makes This Project Stand Out
+
+Unlike typical ML projects:
+
+* ❌ Not a single notebook
+* ❌ Not just model training
+
+✔ End-to-end pipeline system
+✔ Real-world data handling
+✔ Modular architecture
+✔ Integrated visualization
+✔ API-driven design
+
+---
+
+## 🚧 Future Enhancements
+
+* Real-time streaming data pipeline
+* Advanced anomaly detection (fraud detection)
 * Deep learning forecasting models
-* Anomaly detection for fraud detection
-* Cloud deployment
-* Role-based authentication
-* API integrations with accounting software
+* Cloud deployment (AWS/GCP)
+* Role-based authentication & multi-user support
+* Integration with accounting APIs (QuickBooks, Stripe)
 
 ---
 
-# 👨‍💻 Author
+## 👨‍💻 Author
 
 **Krishanu Deka**
-
-GitHub
-https://github.com/krishanudeka
+GitHub: https://github.com/krishanudeka
 
 ---
 
-# ⭐ Support
+## ⭐ Support
 
-If you found this project useful, consider giving it a star ⭐ on GitHub.
+If you find this project useful, consider giving it a ⭐ on GitHub.
