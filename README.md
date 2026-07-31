@@ -1,4 +1,4 @@
-# 🚀 AI Risk Manager
+# AI Risk Manager
 
 **AI Risk Manager** is a full-stack financial intelligence platform that enables businesses to **ingest, process, analyze, and forecast financial data** using a combination of data pipelines, machine learning, and analytical dashboards.
 
@@ -6,49 +6,49 @@ It is designed as a **modular, production-oriented system** that transforms raw 
 
 ---
 
-## ✨ Core Capabilities
+## Core Capabilities
 
-* 📥 **Data Ingestion Pipeline**
+ **Data Ingestion Pipeline**
 
   * Supports structured financial datasets (clients, invoices, transactions)
   * Handles CSV uploads and manual entries
   * Modular ingestion layer (`ingestion.py`, `manual_entry.py`)
 
-* 🧹 **Data Validation & Transformation**
+   **Data Validation & Transformation**
 
   * Schema validation and cleaning (`validator.py`)
   * Feature mapping and normalization (`mapper.py`)
   * Dataset construction pipeline (`dataset_builder.py`, `data_pipelining.py`)
 
-* 🧠 **Machine Learning Risk Engine**
+   **Machine Learning Risk Engine**
 
   * Predictive risk scoring for clients
   * Behavioral analysis based on transaction patterns
   * Model training & inference pipeline (`train_model.py`, `models.py`)
 
-* 📈 **Forecasting Engine**
+   **Forecasting Engine**
 
   * Time-based financial forecasting (`forecast.py`)
   * Revenue trend prediction and future projections
 
-* ⚠️ **Business Risk Analysis**
+   **Business Risk Analysis**
 
   * Rule-based + ML hybrid risk evaluation (`business_risk.py`)
   * Identification of high-risk clients and financial anomalies
 
-* 📊 **Visualization Layer**
+   **Visualization Layer**
 
   * Interactive dashboards (Chart.js)
   * Client-level and global financial insights (`visualizer.py`)
 
-* 🌐 **API Layer**
+   **API Layer**
 
   * FastAPI-powered REST backend (`api.py`, `main.py`)
   * Clean separation between data processing and presentation
 
 ---
 
-## 🧠 System Design Philosophy
+## System Design Philosophy
 
 AI Risk Manager is built with a **pipeline-first architecture**, where each stage is modular and independently extensible:
 
@@ -72,7 +72,7 @@ G --> H[Visualization & API Layer]
 
 ---
 
-## 🧩 Tech Stack
+## Tech Stack
 
 ### Backend
 
@@ -91,7 +91,7 @@ G --> H[Visualization & API Layer]
 
 ---
 
-## 📂 Project Structure
+## Project Structure
 
 ```id="projstruct"
 AI-Risk-Manager/
@@ -177,7 +177,7 @@ http://127.0.0.1:8000
 
 ---
 
-## 📊 Example Insights Generated
+## Example Insights Generated
 
 * High-risk clients based on payment behavior
 * Revenue trends and future projections
@@ -186,7 +186,7 @@ http://127.0.0.1:8000
 
 ---
 
-## 🧠 What Makes This Project Stand Out
+## What Makes This Project Stand Out
 
 Unlike typical ML projects:
 
@@ -201,7 +201,7 @@ Unlike typical ML projects:
 
 ---
 
-## 🚧 Future Enhancements
+## Future Enhancements
 
 * Real-time streaming data pipeline
 * Advanced anomaly detection (fraud detection)
@@ -212,13 +212,9 @@ Unlike typical ML projects:
 
 ---
 
-## 👨‍💻 Author
+## Author
 
 **Krishanu Deka**
 GitHub: https://github.com/krishanudeka
 
 ---
-
-## ⭐ Support
-
-If you find this project useful, consider giving it a ⭐ on GitHub.
