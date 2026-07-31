@@ -132,7 +132,7 @@ AI-Risk-Manager/
 
 ---
 
-## ⚙️ Setup & Installation
+## Setup & Installation
 
 ### 1. Clone Repository
 
@@ -165,7 +165,7 @@ http://127.0.0.1:8000
 
 ---
 
-## 🧪 End-to-End Workflow
+## End-to-End Workflow
 
 1. Upload financial datasets (clients, invoices, transactions)
 2. Data is validated and cleaned
@@ -190,8 +190,8 @@ http://127.0.0.1:8000
 
 Unlike typical ML projects:
 
-* ❌ Not a single notebook
-* ❌ Not just model training
+*  Not a single notebook
+* Not just model training
 
 ✔ End-to-end pipeline system
 ✔ Real-world data handling
